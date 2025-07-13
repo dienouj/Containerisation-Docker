@@ -1,8 +1,3 @@
-Voici un `README.md` **clair, structuré et prêt à l'emploi** pour la présentation de ton projet dans le dossier `vagrant/windowsAndMacIntel/` :
-
----
-
-````markdown
 # 🧰 Environnement de Développement Vagrant pour le Projet VProfile
 
 Ce dossier contient une configuration Vagrant permettant de lancer rapidement une machine virtuelle Ubuntu préinstallée avec Docker et Docker Compose, dans le but de tester localement le projet de containerisation `VProfile`.
