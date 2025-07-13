@@ -1,45 +1,94 @@
-# Containerisation d’une application Java avec Docker & Docker Compose
-
-Ce projet illustre comment containeriser une application web Java complète à l’aide de Docker. L’environnement inclut une application Tomcat (packagée via Maven), une base de données MySQL, un système de cache Memcached, une file de messages RabbitMQ, et un reverse proxy Nginx.
+Voici un `README.md` **clair, structuré et prêt à l'emploi** pour la présentation de ton projet dans le dossier `vagrant/windowsAndMacIntel/` :
 
 ---
 
-## ⚙️ Méthodologie
+````markdown
+# 🧰 Environnement de Développement Vagrant pour le Projet VProfile
 
-### 1. 🔍 Analyse des services nécessaires
+Ce dossier contient une configuration Vagrant permettant de lancer rapidement une machine virtuelle Ubuntu préinstallée avec Docker et Docker Compose, dans le but de tester localement le projet de containerisation `VProfile`.
 
-- **Application Web Java (Tomcat + Maven)**
-- **Base de données MySQL**
-- **Système de cache Memcached**
-- **Broker de messages RabbitMQ**
-- **Serveur Nginx en reverse proxy**
+---
 
-### 2. 🔖 Sélection des images Docker
+## 📁 Structure
 
-J’ai identifié les versions compatibles et stables à utiliser dans Docker Hub :
+```bash
+.
+├── Docker-files/        # Contient les Dockerfiles pour app, db et nginx
+├── docker-compose.yml   # Orchestration des services Docker
+└── Vagrantfile          # Configuration de la VM Ubuntu (avec Docker)
+````
 
-| Service      | Image Docker utilisée                         |
-|--------------|-----------------------------------------------|
-| MySQL        | `mysql:8.0.33`                                |
-| Memcached    | `memcached:latest`                            |
-| RabbitMQ     | `rabbitmq:latest`                             |
-| Maven        | `maven:3.9.9-eclipse-temurin-21-jammy`        |
-| Tomcat       | `tomcat:10-jdk21`                             |
-| Nginx        | `nginx:latest`                                |
+---
 
-### 3. 🧱 Création des Dockerfiles
+## 🚀 Objectif
 
-- Un Dockerfile pour builder le projet Maven et copier le `.war` dans une image Tomcat.
-- Un Dockerfile pour initialiser MySQL avec un dump SQL.
-- Un Dockerfile pour configurer Nginx avec une conf personnalisée.
+Permettre à n'importe quel utilisateur (sur **Windows ou Mac**) de :
 
-### 4. 📦 Déploiement avec Docker Compose
+* Créer une VM Ubuntu propre via Vagrant
+* Travailler dans un environnement Linux isolé avec Docker préinstallé
+* Lancer facilement tous les conteneurs de l'application via `docker compose`
 
-Tous les services sont définis dans un fichier `docker-compose.yml`, avec :
-- Définition des ports
-- Liens entre les services
-- Volumes pour persistance
+---
 
+## ✅ Prérequis
 
+* [VirtualBox](https://www.virtualbox.org/) installé
+* [Vagrant](https://www.vagrantup.com/downloads) installé
+
+---
+
+## ▶️ Lancer la VM
+
+Depuis ce dossier (`vagrant/windowsAndMacIntel/`), exécute :
+
+```bash
+vagrant up
 ```
+
+Cela :
+
+* Télécharge une image Ubuntu (si nécessaire)
+* Crée la VM
+* Configure Docker automatiquement (selon ton Vagrantfile)
+
+---
+
+## 💻 Accéder à la VM
+
+```bash
+vagrant ssh
+```
+
+Une fois connecté, tu es prêt à lancer l'application.
+
+---
+
+## 🐳 Lancer l'application
+
+Depuis l’intérieur de la VM :
+
+```bash
+cd /vagrant
+docker compose build
+docker compose up -d
+```
+
+
+## 🌐 Accès à l'application
+
+Une fois lancée, tu peux accéder à l’application depuis ton navigateur grace à l’IP de ta VM selon la config réseau
+
+---
+
+## 🧹 Nettoyage
+
+```bash
+docker compose down
+docker system prune -a
+vagrant halt
+```
+
+## 👨‍💻 Auteur
+
+Projet réalisé par **Jouneid Guefif** – pour l’apprentissage DevOps avec Vagrant, Docker et une stack applicative Java complète.
 
