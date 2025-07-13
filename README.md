@@ -1,10 +1,10 @@
-# 🧰 Environnement de Développement Vagrant pour le Projet VProfile
+#  Environnement de Développement Vagrant pour le Projet VProfile
 
 Ce dossier contient une configuration Vagrant permettant de lancer rapidement une machine virtuelle Ubuntu préinstallée avec Docker et Docker Compose, dans le but de tester localement le projet de containerisation `VProfile`.
 
 ---
 
-## 📁 Structure
+##  Structure
 
 ```bash
 .
@@ -15,7 +15,7 @@ Ce dossier contient une configuration Vagrant permettant de lancer rapidement un
 
 ---
 
-## 🚀 Objectif
+##  Objectif
 
 Permettre à n'importe quel utilisateur (sur **Windows ou Mac**) de :
 
@@ -25,14 +25,14 @@ Permettre à n'importe quel utilisateur (sur **Windows ou Mac**) de :
 
 ---
 
-## ✅ Prérequis
+##  Prérequis
 
 * [VirtualBox](https://www.virtualbox.org/) installé
 * [Vagrant](https://www.vagrantup.com/downloads) installé
 
 ---
 
-## ▶️ Lancer la VM
+##  Lancer la VM
 
 Depuis ce dossier (`vagrant/windowsAndMacIntel/`), exécute :
 
@@ -48,7 +48,7 @@ Cela :
 
 ---
 
-## 💻 Accéder à la VM
+##  Accéder à la VM
 
 ```bash
 vagrant ssh
@@ -58,7 +58,7 @@ Une fois connecté, tu es prêt à lancer l'application.
 
 ---
 
-## 🐳 Lancer l'application
+##  Lancer l'application
 
 Depuis l’intérieur de la VM :
 
@@ -69,13 +69,13 @@ docker compose up -d
 ```
 
 
-## 🌐 Accès à l'application
+##  Accès à l'application
 
 Une fois lancée, tu peux accéder à l’application depuis ton navigateur grace à l’IP de ta VM selon la config réseau
 
 ---
 
-## 🧹 Nettoyage
+## Nettoyage
 
 ```bash
 docker compose down
@@ -83,7 +83,7 @@ docker system prune -a
 vagrant halt
 ```
 
-## 👨‍💻 Auteur
+##  Auteur
 
 Projet réalisé par **Jouneid Guefif** – pour l’apprentissage DevOps avec Vagrant, Docker et une stack applicative Java complète.
 
